@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout.html}">
+<script src="
+https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js
+"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+<script src='fullcalendar/dist/index.global.js'></script>
+<div class="main" layout:fragment="content">
+  <div class="main_2">
+    <div class="con">hi</div>
+    <div class="calendar" id="cal">
+      메인
+    </div>
+    <div class="info">
+      <a th:href="@{#}" id="ttt"></a>
+    </div>
+  </div>
+</div>
+<script layout:fragment="script" th:inline="javascript">
+  $("#p").click(function (){
+      const calendarEl = document.getElementById('cal');
+      calendarEl.textContent = ""
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        selectable: true
+      });
+
+      calendar.render();
+  })
+  $(".g").click(function (){
+    var ttt = document.getElementById('ttt');
+    ttt.textContent = this.value+"그룹으로 이동"
+    ttt.href = "/test02/"+this.value
+    const calendarEl = document.getElementById('cal');
+    calendarEl.textContent = ""
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      selectable: true
+    });
+    calendar.render();
+  })
+
+</script>
+</html>

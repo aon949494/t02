@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+
+</head>
+<body>
+<form th:action="@{/test02/modify}" th:method="post">
+  <input type="text" name="bno" th:value="${todoDTO.bno}" readonly>
+  <input type="text" name = "title" th:value="${todoDTO.title}">
+  <input type="text" name="content" th:value="${todoDTO.content}">
+    <input type="text" name="memberID" th:value="${todoDTO.memberID}" readonly>
+    <input type="date" name="dueDate" th:value="${todoDTO.dueDate}">
+    <input type="text" name="finished" th:value="${todoDTO.finished}">
+    <input type="text" th:value="${#temporals.format(todoDTO.regDate,'yyyy/MM/dd HH:mm:ss')}" readonly>
+    <input type="text" th:value="${#temporals.format(todoDTO.modDate,'yyyy/MM/dd HH:mm:ss')}" readonly>
+  <input type="submit">
+</form>
+<button type="button" class="removeBtn">remove</button>
+<button type="button" class="listBtn">list</button>
+<script th:inline="javascript">
+    var actionForm = $("form");
+    $(".removeBtn").click(function (){
+        actionForm.attr("action","/test02/remove").attr("method","post");
+        actionForm.submit();
+    })
+    $(".listBtn").click(function (){
+        actionForm.empty();
+        actionForm.attr("action","/test02/list").attr("method","get");
+        actionForm.submit();
+    })
+</script>
+</body>
+
+</html>

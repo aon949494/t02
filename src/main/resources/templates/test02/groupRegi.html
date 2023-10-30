@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form th:action="@{/test02/groupRegi}" th:method="post">
+    <input type="text" name="groupName" placeholder="groupName">
+    <input type="text" name="groupPW" placeholder="groupPW">
+      <input type="text" name="memberID" th:value="${memberID}">
+    <input type="reset">
+    <input type="submit">
+  </form>
+</body>
+</html>

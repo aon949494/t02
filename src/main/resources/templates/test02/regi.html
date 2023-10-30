@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+</head>
+<body>
+<form th:action="@{/test02/regi}" th:method="post">
+    <input type="text" name = "title" placeholder="title">
+    <input type="text" name="content" placeholder="content">
+    <input type="text" name="memberID" th:value="${memberID}" readonly>
+
+    <input type="date" name="dueDate">
+    <input type="reset">
+    <input type="submit">
+</form>
+<button type="button" class="listBtn">돌아가기</button>
+<script th:inline="javascript">
+    var actionForm = $("form");
+    $(".listBtn").click(function (){
+        actionForm.empty();
+        actionForm.attr("action","/test02/list").attr("method","get");
+        actionForm.submit();
+    })
+</script>
+
+</body>
+</html>

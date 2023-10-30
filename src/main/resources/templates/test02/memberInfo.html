@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout.html}">
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+<div class="main_1_2" layout:fragment="content2">
+  <button type="button" class="memModifyBtn">회원정보변경</button><br>
+  <button type="button" class="memRemoveBtn">회원탈퇴</button><br>
+</div>
+<div class="main" layout:fragment="content">
+  <div class="main_2">
+    <div class="con">hi</div>
+    <div class="calendar" th:each="dto:${member}">
+      <input type="text" th:value="${dto.memberID}" readonly><br>
+      <input type="text" th:value="${dto.memberPW}" readonly><br>
+      <input type="text" th:value="${dto.memberName}" readonly><br>
+    </div>
+    <div class="info"></div>
+  </div>
+</div>
+</html>

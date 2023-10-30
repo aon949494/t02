@@ -1,0 +1,30 @@
+@charset "UTF-8";
+*{
+    margin: 0 auto;
+}
+.main{
+    width: 1000px;
+    height: 1000px;
+    background-color: wheat;
+}
+.left{
+    width: 500px;
+    height: 1000px;
+    background-color: coral;
+    float: left;
+}
+.right{
+    width: 500px;
+    height: 1000px;
+    background-color: chocolate;
+    float: left;
+}
+.id{
+    font-size: 30px;
+    border-radius: 20px;
+}
+.pw{
+    font-size: 30px;
+    border-radius: 20px;
+
+}

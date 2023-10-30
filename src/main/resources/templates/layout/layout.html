@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>layouttest</title>
+    <link th:rel="stylesheet" th:href="@{/css/layout.css}">
+    <script src="
+https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js
+"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+    <script>
+        /*document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+            });
+            calendar.render();
+        });*/
+
+
+    </script>
+</head>
+<body>
+  <div class="wrap">
+      <div class="header"><a th:href="@{/test02/main}">팀협업툴</a></div>
+      <div class="main_1">
+          <div class="main_1_1">
+              [[${memberID}]]<br>
+              <a th:href="@{/test02/testlogin}">
+                  <button type="button" class="logoutBtn">LogOut</button>
+              </a>
+              <a th:href="@{/test02/memberInfo(memberID=${memberID})}">
+                  <button type="button" class="memberInfo">MemberInfo</button>
+              </a>
+          </div>
+          <div class="main_1_3"><button type="button" id="p">개인</button></div>
+          <div class="main_1_2" layout:fragment="content2">
+              <a th:href="@{/test02/groupRegi(memberID=${memberID})}">
+                  <button type="button" class="groupRegi">그룹생성</button>
+              </a>
+              <div th:each="group:${groupList}">
+                  <input type="button" th:value="${group.groupName}" class="g">
+              </div>
+          </div>
+      </div>
+    <div class="main" layout:fragment="content">
+
+    </div>
+  </div>
+
+</body>
+<script layout:fragment="script" th:inline="javascript">
+
+</script>
+</html>

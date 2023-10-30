@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout.html}">
+
+<div class="main" layout:fragment="content">
+    <div class="main_1">
+        <div class="main_1_1">
+            개인
+        </div>
+        <div class="main_1_2">
+            그룹
+        </div>
+    </div>
+    <div class="main_2">
+        <div class="con">배너</div>
+        <div class="calendar" th:each="dto:${todoList}">
+            <a th:href="@{/test02/read(bno=${dto.bno})}">[[${dto.bno}]]</a>
+            [[${dto.title}]]
+            [[${dto.content}]]
+            [[${dto.memberID}]]
+            [[${dto.dueDate}]]
+            [[${dto.finished}]]
+        </div>
+        <div class="info">
+            <button type="button" class="regiBtn">register</button>
+            <button type="button" class="logoutBtn">LogOut</button>
+        </div>
+    </div>
+</div>
+<!--<div th:each="dto:${todoList}">
+    <a th:href="@{/test02/read(bno=${dto.bno})}">[[${dto.bno}]]</a>
+    [[${dto.title}]]
+    [[${dto.content}]]
+    [[${dto.memberID}]]
+    [[${dto.dueDate}]]
+    [[${dto.finished}]]
+</div>-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+<script th:inline="javascript">
+    $(".regiBtn").click(function (){
+        location.href="/test02/regi"
+    })
+    $(".logoutBtn").click(function (){
+        location.href="/test02/testlogin"
+    })
+</script>
+</html>

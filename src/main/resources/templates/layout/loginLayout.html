@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:rel="stylesheet" th:href="@{/css/loginLayout.css}">
+</head>
+<body>
+<div class="main">
+  <div class="left">왼쪽</div>
+    <div class="right" layout:fragment="content">
+        <h1>오른쪽</h1>
+    </div>
+</div>
+</body>
+</html>
