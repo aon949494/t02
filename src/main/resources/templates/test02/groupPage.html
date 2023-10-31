@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>GROUP NAME = [[${groupName}]]</h1>
+    <a th:href="@{#}" id="groupRemove">GROUP REMOVE</a>
+</body>
+<script th:inline="javascript">
+    $("#groupRemove").click(function (){
+        const groupRemove = document.getElementById('groupRemove');
+        groupRemove.href = "/test02/groupRemove?groupName="+this.value
+
+
+    })
+</script>
+</html>

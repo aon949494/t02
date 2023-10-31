@@ -32,7 +32,7 @@ https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js
   $(".g").click(function (){
     var ttt = document.getElementById('ttt');
     ttt.textContent = this.value+"그룹으로 이동"
-    ttt.href = "/test02/"+this.value
+    ttt.href = "/test02/groupPage?groupName="+this.value
     const calendarEl = document.getElementById('cal');
     calendarEl.textContent = ""
     const calendar = new FullCalendar.Calendar(calendarEl, {

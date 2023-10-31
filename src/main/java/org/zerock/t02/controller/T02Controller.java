@@ -141,4 +141,9 @@ public class T02Controller {
         redirectAttributes.addFlashAttribute("bno", bno);
         return "redirect:/test02/main";
     }
+    @GetMapping("/groupPage")
+    public void groupPage(String groupName, Model model){
+        log.info(groupName);
+        model.addAttribute("groupName",groupName);
+    }
 }
